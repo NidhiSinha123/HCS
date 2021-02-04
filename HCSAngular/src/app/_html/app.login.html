@@ -1,0 +1,86 @@
+<div class="py-md-5 py-4 border-bottom">
+  <div class="container">
+    <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+      <div class="col-md-4 order-md-2 mb-2 mb-md-0 align-items-center text-center">
+        <a class="navbar-brand" href="home">LifeLine<span style="color:black">Get your tests done at convenience</span></a>
+      </div>
+      <div class="col-md-4 order-md-1 d-flex topper mb-md-0 mb-2 align-items-center text-md-right">
+        <div class="icon d-flex justify-content-center align-items-center order-md-last">
+          <span class="icon-map"></span>
+        </div>
+        <div class="pr-md-4 pl-md-0 pl-3 text">
+          <p class="con"><span>Head Office</span> <span></span></p>
+          <p class="con">203 St. Mountain View, Santa Cruz, New Delhi, India</p>
+        </div>
+      </div>
+      <div class="col-md-4 order-md-3 d-flex topper mb-md-0 align-items-center">
+        <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+        <div class="text pl-3 pl-md-3">
+          <p class="hr"><span>Open Hours</span></p>
+          <p class="time"><span>Everyday</span> <span> 10:00am - 8:00pm</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container d-flex align-items-center">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav m-auto">
+              <li class="nav-item active"><a href="home" class="nav-link pl-0">Home</a></li>
+              <li class="nav-item"><a href="home" class="nav-link">About</a></li>
+             <!--<li class="nav-item"><a href="doctor.html" class="nav-link">Doctor</a></li>
+              <li class="nav-item"><a href="department.html" class="nav-link">Treatments</a></li>
+              <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li> -->
+              <li class="nav-item"><a href="register" class="nav-link">Register</a></li>
+            <li class="nav-item"><a href="login" class="nav-link">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <!-- END nav -->	
+
+  <body style="background-image:url('/assets/images/home1 (1).jpg') ">
+    <br><br><br>
+<form name="form" #f="ngForm" novalidate class="col-lg-6 offset-lg-3 "> 
+    <div class="form-group">
+            <div>
+                <label for="email"><b>Email</b></label>
+            </div>
+            <div class="col-sm-16"><input type="text" class="form-control" name="userEmail" [(ngModel)]="useremail" 
+                #userEmail="ngModel" [ngClass]="{'is-invalid':f.submitted && userEmail.invalid }" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+                required/>
+
+                <div *ngIf="userEmail.invalid && (userEmail.dirty ||userEmail.touched || f.submitted)"
+                    class="alert alert-danger">
+                    <div *ngIf="userEmail.errors.required">
+                      Email is required.
+                    </div>
+                    <div *ngIf="userEmail.errors.pattern">Email must be a valid email address</div>
+                  </div>
+            </div>
+     </div><br><br>
+     <div class="form-group">
+            <div>
+                <label for="password"><b>Password</b></label>
+            </div>
+            <div class="col-sm-16"><input type="password" class="form-control" name="userPassword" [(ngModel)]="password" 
+                #userPassword="ngModel" [ngClass]="{'is-invalid':f.submitted && userPassword.invalid }" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"
+                required/>
+
+                <div *ngIf="userPassword.invalid && (userPassword.dirty ||userPassword.touched || f.submitted)"
+                    class="alert alert-danger">
+                    <div *ngIf="userPassword.errors.required">
+                      Password is required.
+                    </div>
+                    <div *ngIf="userPassword.errors.pattern">Enter valid password</div>
+                  </div>
+            </div>
+     </div><br>
+     <button type="submit" class="btn btn-success" (click)="checkLogin()"  
+     [disabled]="f.form.invalid"
+     class="btn btn-primary mx-auto d-block">Submit</button>
+</form> <br><br><br><br><br><br><br><br><br><br><br><br><br><br></body>

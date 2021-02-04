@@ -1,0 +1,2 @@
+2019-10-19 23:59:40,659 WARN com.cg.healthcaresystemrest.config.JwtRequestFilter [http-nio-9123-exec-4] JWT Token does not begin with Bearer String
+2019-10-19 23:59:57,901 WARN com.cg.healthcaresystemrest.config.JwtRequestFilter [http-nio-9123-exec-5] JWT Token does not begin with Bearer String

@@ -1,0 +1,14 @@
+<table border="1">
+    <tr>
+        <th>Center Id</th>
+        <th>Center Name</th>
+        <th>Contact Number</th>
+        <th>Address</th>
+    </tr>
+    <tr *ngFor="let center of centerList">       
+        <td>{{center.centerId}}</td>
+        <td>{{center.centerName}}</td>
+        <td>{{center.centerContactNo}}</td>
+        <td>{{center.centerAddress}}</td>
+    </tr>
+</table> 

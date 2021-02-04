@@ -1,0 +1,82 @@
+<div class="py-md-5 py-4 border-bottom">
+    <div class="container">
+      <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+        <div class="col-md-4 order-md-2 mb-2 mb-md-0 align-items-center text-center">
+          <a class="navbar-brand" href="adminhome">LifeLine<span style="color:black">Get your tests done at convenience</span></a>
+        </div>
+        <div class="col-md-4 order-md-1 d-flex topper mb-md-0 mb-2 align-items-center text-md-right">
+          <div class="icon d-flex justify-content-center align-items-center order-md-last">
+            <span class="icon-map"></span>
+          </div>
+          <div class="pr-md-4 pl-md-0 pl-3 text">
+            <p class="con"><span>Head Office</span> <span></span></p>
+            <p class="con">203 St. Mountain View, Santa Cruz, New Delhi, India</p>
+          </div>
+        </div>
+        <div class="col-md-4 order-md-3 d-flex topper mb-md-0 align-items-center">
+          <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+          <div class="text pl-3 pl-md-3">
+            <p class="hr"><span>Open Hours</span></p>
+            <p class="time"><span>Everyday</span> <span> 10:00am - 8:00pm</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container d-flex align-items-center">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav m-auto">
+            
+            <li class="nav-item"><a href="addcenter" class="nav-link">Add Center</a></li>
+            <li class="nav-item"><a href="deletecenter" class="nav-link">Delete Center</a></li>
+            <li class="nav-item"><a href="addtest" class="nav-link">Add Test</a></li>
+            <li class="nav-item"><a href="deletetest" class="nav-link">Delete Test</a></li>
+            <li class="nav-item"><a href="approveappointment" class="nav-link">Approve Appointment</a></li>
+            <li class="nav-item"><a href="logout" class="nav-link">LogOut</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h4><p class="font-weight-bold" style="color: dodgerblue; text-align: center;">Add Test</p></h4>
+  <form name="form" #f="ngForm" novalidate class="col-lg-6 offset-lg-3">
+    <div class="form-group">
+      <div class="col-md-4 col-lg-4" >Select Center</div>
+      
+          <select class="form-control" name="centerSelected" [(ngModel)]="center.centerId" #centerSelected="ngModel"  
+          [ngClass]="{'invalid-data': centerSelected.invalid && f.submitted, 'valid-data': centerSelected.valid && f.submitted}" required>  
+          
+          <option *ngFor="let center of centerList" [value]="center.centerId" >{{center.centerName}}</option></select>
+          <div *ngIf="centerSelected.invalid && f.submitted">  
+              <span style="color: red;">Please Select Center.</span>  
+            </div>  
+  
+        </div>
+       
+    <div class="form-group">
+      <div><label for="testName">Test Name</label></div>
+     <input type="text" class="form-control" name="testName" [(ngModel)]="model.testName"
+      #testName="ngModel" [ngClass]="{'is-invalid':f.submitted && testName.invalid}" required/>
+      <div class="invalid-feedback"><div>Test Name is required</div>
+      </div>
+    </div>
+    <button type="submit"  value="addtest" class="btn btn-success" (click)="addTest(center.centerId)" class="btn btn-primary mx-auto d-block">Add test</button>
+    <div><label> Select a center and add an excel file with all tests</label></div>
+   
+   
+  </form>
+  <form class="col-lg-6 offset-lg-3">
+  <td><input type="file" id="file" 
+  (change)="getFileDetails($event)" accept=".xls,.xlsx,.csv"/></td>
+   <td style="color: red;"> {{errorMessage}}</td>
+  <button class="btn btn-primary mx-auto d-block" (click)="uploadFiles(centerSelected)">Upload</button>
+</form>
+ 
+   
+
+ 

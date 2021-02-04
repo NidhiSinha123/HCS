@@ -1,0 +1,290 @@
+<div class="py-md-5 py-4 border-bottom">
+    <div class="container">
+      <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+        <div class="col-md-4 order-md-2 mb-2 mb-md-0 align-items-center text-center">
+          <a class="navbar-brand" href="home">LifeLine<span style="color:black">Get your tests done at convenience</span></a>
+        </div>
+        <div class="col-md-4 order-md-1 d-flex topper mb-md-0 mb-2 align-items-center text-md-right">
+          <div class="icon d-flex justify-content-center align-items-center order-md-last">
+            <span class="icon-map"></span>
+          </div>
+          <div class="pr-md-4 pl-md-0 pl-3 text">
+            <p class="con"><span>Head Office</span> <span></span></p>
+            <p class="con">203 St. Mountain View, Santa Cruz, New Delhi, India</p>
+          </div>
+        </div>
+        <div class="col-md-4 order-md-3 d-flex topper mb-md-0 align-items-center">
+          <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+          <div class="text pl-3 pl-md-3">
+            <p class="hr"><span>Open Hours</span></p>
+            <p class="time"><span>Everyday</span> <span> 10:00am - 8:00pm</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container d-flex align-items-center">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav m-auto">
+                <li class="nav-item active"><a href="home" class="nav-link pl-0">Home</a></li>
+                <li class="nav-item"><a href="home" class="nav-link">About</a></li>
+               <!--<li class="nav-item"><a href="doctor.html" class="nav-link">Doctor</a></li>
+                <li class="nav-item"><a href="department.html" class="nav-link">Treatments</a></li>
+                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li> -->
+                <li class="nav-item"><a href="register" class="nav-link">Register</a></li>
+              <li class="nav-item"><a href="login" class="nav-link">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- END nav -->	
+
+  
+  <body style="background-image:url('/assets/images/home1 (1).jpg') ">
+    <br>
+    <form name="form" #f="ngForm" novalidate class="col-lg-6 offset-lg-3 ">
+        <div class="form-group">
+            <div>
+                <label for="name"><b>Name</b></label>
+            </div>
+            <div class="col-sm-16"><input type="text" class="form-control" name="userName" [(ngModel)]="model.userName" #userName="ngModel" [ngClass]="{'is-invalid':f.submitted && userName.invalid }" required/>
+  
+                <div *ngIf="userName.invalid && (userName.dirty ||userName.touched || f.submitted)" class="alert alert-danger">
+                    <div *ngIf="userName.errors.required">
+                        Name is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label for="email"><b>Email</b></label>
+            </div>
+            <div class="col-sm-16"><input type="text" class="form-control" name="userEmail" [(ngModel)]="model.userEmail" #userEmail="ngModel" [ngClass]="{'is-invalid':f.submitted && userEmail.invalid }" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required/>
+  
+                <div *ngIf="userEmail.invalid && (userEmail.dirty ||userEmail.touched || f.submitted)" class="alert alert-danger">
+                    <div *ngIf="userEmail.errors.required">
+                        Email is required.
+                    </div>
+                    <div *ngIf="userEmail.errors.pattern">Email must be a valid email address</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label for="password"><b>New Password</b></label>
+            </div>
+            <div class="col-sm-16"><input type="password" class="form-control" name="userPassword" [(ngModel)]="model.userPassword" #userPassword="ngModel" [ngClass]="{'is-invalid':f.submitted && userPassword.invalid }" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"
+                    required/>
+  
+                <div *ngIf="userPassword.invalid && (userPassword.dirty ||userPassword.touched || f.submitted)" class="alert alert-danger">
+                    <div *ngIf="userPassword.errors.required">
+                        Password is required.
+                    </div>
+                    <div *ngIf="userPassword.errors.pattern">Enter valid password</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+  
+            <div class="col-md-4 col-lg-4"> <label for="contactNo"><b>Contact Number</b></label></div>
+            <div class="col-sm-16"> <input type="text" id="contactNo" class="form-control" name="contactNo" [(ngModel)]="model.contactNo" #contactNo="ngModel" [ngClass]="{'is-invalid':f.submitted && contactNo.invalid  }" maxlength="10" minlength="10" pattern="[0-9]+" required/>
+                <div *ngIf="contactNo.invalid && (contactNo.dirty ||contactNo.touched || f.submitted )" class="alert alert-danger">
+  
+                    <div *ngIf="contactNo.errors.required">
+                        Center ContactNumber is required.
+                    </div>
+                    <div *ngIf="contactNo.errors.minlength">
+                        Center ContactNumber must be at least 10 characters long.
+                    </div>
+                    <div *ngIf="contactNo.errors.pattern">
+                        Center ContactNumber should be digits only
+                    </div>
+  
+                </div>
+            </div>
+  
+        </div>
+  
+        <div class="form-group">
+  
+            <div class="col-md-4 col-lg-4"> <label for="age"><b>Age</b></label></div>
+            <div class="col-sm-16"> <input type="text" id="age" class="form-control" name="age" [(ngModel)]="model.age" #age="ngModel" [ngClass]="{'is-invalid':f.submitted && age.invalid  }" minlength=1 maxlength=3 pattern="[1-9]?[0-9]{1}$|^100" required/>
+                <div *ngIf="age.invalid && (age.dirty ||age.touched || f.submitted )" class="alert alert-danger">
+  
+                    <div *ngIf="age.errors.required">
+                        Age is required.
+                    </div>
+                    <div *ngIf="age.errors.minlength">
+                        Enter valid age
+                    </div>
+                    <div *ngIf="age.errors.maxlength">
+                        Enter valid age
+                    </div>
+                    <div *ngIf="age.errors.pattern">
+                        Enter valid age
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+  
+        <div class="form-group">
+            <div class="col-md-4 col-lg-4"> <label for="gender"><b>Gender</b></label></div>
+            <div class="form-control">
+                <label class="radio-inline" [ngClass]="{'is-invalid':f.submitted && gender.invalid  }">
+                                        <input type="radio" required #gender="ngModel" value="male" name="gender" [(ngModel)]="model.gender">Male
+                                    </label>
+                <label class="radio-inline" [ngClass]="{'is-invalid':f.submitted && gender.invalid  }">
+                                            <input type="radio" required #gender="ngModel" value="female" name="gender" [(ngModel)]="model.gender">Female
+                                    </label>
+  
+            </div>
+  
+  
+        </div>
+        <button type="submit" class="btn btn-success" (click)="register()" 
+        [disabled]="f.form.invalid"
+        class="btn btn-primary mx-auto d-block" class="btn btn-primary btn-lg" style="margin-left: 40%">Submit</button>
+  
+  
+  
+    </form>
+    <br> <br> </body>
+  
+  <footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-5">
+                    <h2 class="ftco-heading-2 logo">LifeLine</h2>
+                    <p>For millions of people, LifeLine is the trusted and familiar home where they know they’ll find a healing touch. <br> It connects them with everything they need to take good care of themselves and their family - <br> assessing health
+                        issues, finding the right doctor, booking diagnostic tests or learning new ways to live healthier.</p>
+                </div>
+                <!-- <div class="ftco-footer-widget mb-5">
+            <h2 class="ftco-heading-2">Have Questions?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><span class="icon icon-map-marker"></span><span class="text">203 St. Mountain View, Santa Cruz, New Delhi, India</span></li>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 7087 113 201</span></a></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">lifelinehealthcaresystem@gmail.com</span></a></li>
+              </ul>
+            </div> -->
+  
+                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+                <!-- </div> -->
+            </div>
+  
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-5 ml-md-4">
+                    <h2 class="ftco-heading-2">Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                    </ul>
+                </div>
+  
+                <!-- <div class="ftco-footer-widget mb-5 ml-md-4">
+            <h2 class="ftco-heading-2">Services</h2>
+            <ul class="list-unstyled">
+              <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Neurolgy</a></li>
+              <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Dentist</a></li>
+              <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Ophthalmology</a></li>
+              <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cardiology</a></li>
+              <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Others</a></li>
+            </ul>
+          </div> -->
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-5">
+                    <h2 class="ftco-heading-2">Services</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Neurolgy</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Dentist</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Ophthalmology</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cardiology</a></li>
+                        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Others</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--<div class="ftco-footer-widget mb-5">
+            <h2 class="ftco-heading-2">Recent Blog</h2>
+            <div class="block-21 mb-4 d-flex">
+              <a class="blog-img mr-4" style="background-image: url(assets/images/image_1.jpg);"></a>
+              <div class="text">
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> Sept. 20, 2019</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="block-21 mb-5 d-flex">
+              <a class="blog-img mr-4" style="background-image: url(assets/images/image_2.jpg);"></a>
+              <div class="text">
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> Sept. 20, 2019</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+  
+            <div class="col-md">
+                <!-- <div class="ftco-footer-widget mb-5">
+            <h2 class="ftco-heading-2">Opening Hours</h2>
+            <h3 class="open-hours pl-4"><span class="ion-ios-time mr-3"></span>Booking opens 24/7</h3>
+            <h3 class="open-hours pl-4"><span class="ion-ios-time mr-3"></span>Center opens 10:00 am - 8:00 pm</h3>
+          </div> -->
+  
+                <!-- <div class="ftco-footer-widget mb-5">
+            <h2 class="ftco-heading-2">Subscribe Us!</h2>
+            <form action="#" class="subscribe-form">
+              <div class="form-group">
+                <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
+                <input type="submit" value="Subscribe" class="form-control submit px-3">
+              </div>
+            </form>
+          </div> -->
+                <div class="ftco-footer-widget mb-5">
+                    <h2 class="ftco-heading-2">Have Questions?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span class="text">203 St. Mountain View, Santa Cruz, New Delhi, India</span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 7087 113 201</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">lifelinehealthcare@gmail.com</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://imgix.bustle.com/uploads/image/2019/7/3/17486421-9bd8-4448-b97e-3df3e7393d18-a23_promo_stills_0225190037_r.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70"
+                        target="_blank">Group 3</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+  </footer>

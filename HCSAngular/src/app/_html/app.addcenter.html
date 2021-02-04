@@ -1,0 +1,222 @@
+<div class="py-md-5 py-4 border-bottom">
+    <div class="container">
+      <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+        <div class="col-md-4 order-md-2 mb-2 mb-md-0 align-items-center text-center">
+          <a class="navbar-brand" href="adminhome">LifeLine<span style="color:black">Get your tests done at convenience</span></a>
+        </div>
+        <div class="col-md-4 order-md-1 d-flex topper mb-md-0 mb-2 align-items-center text-md-right">
+          <div class="icon d-flex justify-content-center align-items-center order-md-last">
+            <span class="icon-map"></span>
+          </div>
+          <div class="pr-md-4 pl-md-0 pl-3 text">
+            <p class="con"><span>Head Office</span> <span></span></p>
+            <p class="con">203 St. Mountain View, Santa Cruz, New Delhi, India</p>
+          </div>
+        </div>
+        <div class="col-md-4 order-md-3 d-flex topper mb-md-0 align-items-center">
+          <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+          <div class="text pl-3 pl-md-3">
+            <p class="hr"><span>Open Hours</span></p>
+            <p class="time"><span>Everyday</span> <span> 10:00am - 8:00pm</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container d-flex align-items-center">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav m-auto">
+           
+            <li class="nav-item"><a href="addcenter" class="nav-link">Add Center</a></li>
+            <li class="nav-item"><a href="deletecenter" class="nav-link">Delete Center</a></li>
+            <li class="nav-item"><a href="addtest" class="nav-link">Add Test</a></li>
+            <li class="nav-item"><a href="deletetest" class="nav-link">Delete Test</a></li>
+            <li class="nav-item"><a href="approveappointment" class="nav-link">Approve Appointment</a></li>
+            <li class="nav-item"><a href="logout" class="nav-link">LogOut</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <body style="background-image:url('/assets/images/center2.jpg') ">
+    <br><br>
+<form name="form" #f="ngForm" novalidate class="col-lg-6 offset-lg-3 "> 
+    <div class="form-group">
+    <div><label for="centerName"><b>Center Name</b></label></div>
+    <div class="col-sm-16"><input type="text" class="form-control" name="centerName" [(ngModel)]="model.centerName" 
+        #centerName="ngModel" [ngClass]="{'is-invalid':f.submitted && centerName.invalid }"
+        required/>
+      <!--  <div class="invalid-feedback">
+                <div>Center name is required</div>
+        </div>-->
+        <div *ngIf="centerName.invalid && (centerName.dirty ||centerName.touched || f.submitted)"
+            class="alert alert-danger">
+            <div *ngIf="centerName.errors.required">
+              Center name is required.
+            </div>
+          </div>
+       
+    </div>
+    
+    
+    </div>
+    <div class="form-group">
+    
+        <div class="col-md-16 col-lg-8"> <label for="centerContactNumber"><b>Contact Number</b></label></div>    
+        <div class="col-sm-16"> <input type="text" id="centerContactNumber" class="form-control" name="centerContactNumber" [(ngModel)]="model.centerContactNo"
+            #centerContactNumber="ngModel" [ngClass]="{'is-invalid':f.submitted && centerContactNumber.invalid  }"
+            maxlength="10" minlength="10" pattern="[0-9]+"
+            required/>
+            <div *ngIf="centerContactNumber.invalid && (centerContactNumber.dirty ||centerContactNumber.touched || f.submitted )"
+            class="alert alert-danger" >
+       
+          <div *ngIf="centerContactNumber.errors.required">
+            Center ContactNumber is required.
+          </div>
+          <div *ngIf="centerContactNumber.errors.minlength">
+            Center ContactNumber must be at least 10 characters long.
+          </div>
+          <div *ngIf="centerContactNumber.errors.pattern">
+                  Center ContactNumber should be digits only
+          </div>
+       
+        </div>  
+        
+            
+        </div>
+        <div class="form-group">
+                <div class="col-md-4 col-lg-4">
+                <label for="centerAddress"><b>Center Address</b></label></div>
+                <div class="col-sm-16">
+                <input type="text" id="centerAddress" class="form-control" name="centerAddress" [(ngModel)]="model.centerAddress"
+                #centerAddress="ngModel" [ngClass]="{'is-invalid':f.submitted && centerAddress.invalid  }"
+                 required/>
+               <!--  <div class="invalid-feedback">
+                        <div>Center address is required</div>
+                </div>-->
+                <div *ngIf="centerAddress.invalid && (centerAddress.dirty ||centerAddress.touched || f.submitted )"
+            class="alert alert-danger">
+            <div *ngIf="centerAddress.errors.required">
+              Center Address is required.
+            </div>
+          </div>
+          
+    </div>
+       
+         
+               </div>
+                
+        </div>
+        <button type="submit" class="btn btn-success" (click)="addCenter()" class="btn btn-primary mx-auto d-block">Submit</button>
+      
+    
+    </form>
+    <br><br>
+</body>
+    <!-- <br><br>
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-5">
+                <h2 class="ftco-heading-2 logo">Dentista</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              </div>
+              <div class="ftco-footer-widget mb-5">
+                  <h2 class="ftco-heading-2">Have a Questions?</h2>
+                  <div class="block-23 mb-3">
+                    <ul>
+                      <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                      <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                      <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                    </ul>
+                  </div>
+  
+                  <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                  <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-5 ml-md-4">
+                <h2 class="ftco-heading-2">Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                </ul>
+              </div>
+              <div class="ftco-footer-widget mb-5 ml-md-4">
+                <h2 class="ftco-heading-2">Services</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Neurolgy</a></li>
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Dentist</a></li>
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Ophthalmology</a></li>
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cardiology</a></li>
+                  <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Surgery</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-5">
+                <h2 class="ftco-heading-2">Recent Blog</h2>
+                <div class="block-21 mb-4 d-flex">
+                  <a class="blog-img mr-4" style="background-image: url(assets/images/image_1.jpg);"></a>
+                  <div class="text">
+                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                    <div class="meta">
+                      <div><a href="#"><span class="icon-calendar"></span> Sept. 20, 2019</a></div>
+                      <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                      <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block-21 mb-5 d-flex">
+                  <a class="blog-img mr-4" style="background-image: url(assets/images/image_2.jpg);"></a>
+                  <div class="text">
+                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                    <div class="meta">
+                      <div><a href="#"><span class="icon-calendar"></span> Sept. 20, 2019</a></div>
+                      <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                      <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-5">
+                  <h2 class="ftco-heading-2">Opening Hours</h2>
+                  <h3 class="open-hours pl-4"><span class="ion-ios-time mr-3"></span>We are open 24/7</h3>
+              </div>
+              <div class="ftco-footer-widget mb-5">
+                  <h2 class="ftco-heading-2">Subscribe Us!</h2>
+                <form action="#" class="subscribe-form">
+                  <div class="form-group">
+                    <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
+                    <input type="submit" value="Subscribe" class="form-control submit px-3">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+  
+              
+            </div>
+          </div>
+        </div>
+      </footer>
+       -->
+    
+  

@@ -1,0 +1,9 @@
+2019-10-14 23:53:27,769 INFO com.cg.healthcaresystemrest.controller.HCSController [http-nio-9123-exec-1] Validating center Id entered for appointment..
+2019-10-14 23:53:27,783 INFO com.cg.healthcaresystemrest.service.UserServiceImpl [http-nio-9123-exec-1] Center Id is proper... returning BigInteger value of the entered Id..
+2019-10-14 23:53:27,784 INFO com.cg.healthcaresystemrest.controller.HCSController [http-nio-9123-exec-1] Getting the center corresponding to the center Id
+2019-10-14 23:53:27,784 INFO com.cg.healthcaresystemrest.service.UserServiceImpl [http-nio-9123-exec-1] Returning center object of the center id..
+2019-10-14 23:53:27,788 INFO com.cg.healthcaresystemrest.controller.HCSController [http-nio-9123-exec-1] Validating test Id entered for appointment..
+2019-10-14 23:53:27,794 INFO com.cg.healthcaresystemrest.service.UserServiceImpl [http-nio-9123-exec-1] Test Id is proper... returning BigInteger value of the entered Id..
+2019-10-14 23:53:27,795 INFO com.cg.healthcaresystemrest.controller.HCSController [http-nio-9123-exec-1] Getting the test corresponding to the test Id
+2019-10-14 23:53:27,796 INFO com.cg.healthcaresystemrest.controller.HCSController [http-nio-9123-exec-1] Validating user Id entered for appointment and getting the user object if valid.
+2019-10-14 23:53:27,798 ERROR com.cg.healthcaresystemrest.controller.HCSController [http-nio-9123-exec-1] Caught validation exception in /addAppointment Controller
